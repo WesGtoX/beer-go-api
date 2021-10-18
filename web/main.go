@@ -1,0 +1,3 @@
+package web
+
+func main() {}
