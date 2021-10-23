@@ -1,12 +1,22 @@
 package beer
 
-// As tags json definem como os dados vão ser transformados em JSON
 type Beer struct {
 	ID    int64     `json:"id"`
 	Name  string    `json:"name"`
 	Type  BeerType  `json:"type"`
 	Style BeerStyle `json:"style"`
 }
+
+/*
+O comando usado para criar o banco de dados foi:
+
+CREATE TABLE beer (
+   id INTEGER PRIMARY KEY AUTOINCREMENT,
+   name text NOT NULL,
+   type integer NOT NULL,
+   style integer not null
+);
+*/
 
 // https://www.thebeerstore.ca/beer-101/beer-types/
 type BeerType int
@@ -38,7 +48,7 @@ func (t BeerType) String() string {
 type BeerStyle int
 
 const (
-	StyleAmber = iota + 1 // definir automaticamente os ID's sequencialmente pelo compilador
+	StyleAmber = iota + 1		// definir automaticamente os ID's sequencialmente pelo compilador
 	StyleBlonde
 	StyleBrown
 	StyleCream
